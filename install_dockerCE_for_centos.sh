@@ -25,7 +25,7 @@ sudo yum remove docker \
 # 1.2. Install Docker CE
 
 # 1.2.1. Set up the repository
-sudo yum install -y yum-utils \
+sudo yum -y install -y yum-utils \
   device-mapper-persistent-data \
   lvm2
 
@@ -38,5 +38,7 @@ sudo yum install docker-ce
 
 # 1.2.3. Start Docker
 sudo systemctl start docker
+
+
     
 
