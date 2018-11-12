@@ -2,7 +2,7 @@
 
 #
 # Install Base Environment
-# OS : CentOS 7.2 in VMware
+# OS : CentOS 7.4 in VMware
 #
 # Ref : https://docs.docker.com/install/linux/docker-ce/centos/ 
 
@@ -40,5 +40,30 @@ sudo yum install docker-ce
 sudo systemctl start docker
 
 
-    
+#
+# 2. Docker Composer Install for CentOS
+#
+# Ref : https://docs.docker.com/compose/install/
+
+# 2.1. Run this command to download the latest version of Docker Compose:
+
+sudo curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+ 
+# 2.2. Apply executable permissions to the binary:
+
+sudo chmod +x /usr/local/bin/docker-compose
+
+# 2.3. Command-line completion
+sudo curl -L https://raw.githubusercontent.com/docker/compose/1.23.1/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
+
+cat >> ~/.bash_profile << EOF
+
+if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
+    . /opt/local/etc/profile.d/bash_completion.sh
+fi
+EOF
+
+
+# Finish
+
 
