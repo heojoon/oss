@@ -21,14 +21,16 @@ DIR=/app/docker
 
 cd ${DIR}
 
+
 git clone https://github.com/wurstmeister/kafka-docker
 
+# Modify docker-composer.xml
 
 docker-compose up -d
-
 docker scale kafka=2
-
 docker-compose ps
+
+
 
 # TEST
 # create topics
@@ -43,6 +45,6 @@ $KAFKA_HOME/bin/kafka-console-producer.sh --topic=topic --broker-list=`broker-li
 # consumer (another shell)
 $ $KAFKA_HOME/bin/kafka-console-consumer.sh --topic=topic --zookeeper=$ZK
 
-
+./kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic topic --from-beginning
 
 
