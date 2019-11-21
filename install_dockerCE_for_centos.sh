@@ -34,7 +34,7 @@ sudo yum-config-manager \
     https://download.docker.com/linux/centos/docker-ce.repo
 
 # 1.2.2. Install Docker CE
-sudo yum install docker-ce
+sudo yum -y install docker-ce
 
 # 1.2.3. Start Docker
 sudo systemctl start docker
